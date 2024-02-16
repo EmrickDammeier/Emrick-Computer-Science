@@ -1,4 +1,24 @@
-# Declare scores as a global variable to store game scores
+# Display the menu options
+# Ask the user to enter their choice
+# Check if the choice is valid
+# If choice is invalid, display an error message and go back to asking for user input
+# if choice is valid, perform the corresponding action based on the menu option
+# If user chooses instructions, print the instructions
+# if the action is to play a game, ask for the word length
+# if user chooses for it ot be random, randomize word length
+# If the action is to display the scoreboard, show the scoreboard
+# if the action is to exit, terminate the program
+# Player will play one letter at a time
+# user will input letter, then pogram must go thorugh each letter to see if matches
+# if no match, print your letter is not found
+# if matched, print your letter is the nth letter
+# calclate a score depending on guesses remaining and possibly word length
+# if user doesn't guess the word, the score is 0
+# if user guesses word, ask for user's name and print the score and return user to menu
+# save information in a file with his name and score
+# only save if user guesses word
+# worked with Jack Yuan
+# declare scores as a global variable to store game scores
 scores = []
 
 # Define the main function to run the Hangman game
