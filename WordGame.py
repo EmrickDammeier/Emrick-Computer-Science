@@ -19,6 +19,8 @@
 # only save if user guesses word
 # worked with Jack Yuan
 # declare scores as a global variable to store game scores
+import random
+# Declare scores as a global variable to store game scores
 scores = []
 
 # Define the main function to run the Hangman game
@@ -72,7 +74,7 @@ def play_game(word_length=None, category=None):
     # Check if word_length is not provided, then generate a random word length between 2 and 10
     if word_length is None:
         word_length = random.randint(2, 10)
-    
+
     # Check if category is not provided, then choose from predefined categories
     if category is None:
         categories = ['food', 'animal', 'state']
@@ -130,9 +132,9 @@ def play_game_random_category():
 # Define the function to generate a random word based on word_length and category
 def random_word(word_length, category=None):
     categories = {
-        'food': ['pizza', 'burger', 'pasta'],
-        'animal': ['lion', 'elephant', 'giraffe'],
-        'state': ['california', 'texas', 'florida']
+        'food': ['pizza', 'burger', 'pasta', 'cheese', 'chicken', 'fish', 'salmon', 'crackers', 'chips', 'bacon', 'sausage', 'eggs', 'toast', 'steak', 'pork', 'salad', 'cereal', 'rice', 'muffin', 'spaghetti'],
+        'animal': ['lion', 'elephant', 'giraffe', 'cat', 'dog', 'snake', 'fish', 'zebra', 'rhino', 'hippo', 'flamingo', 'coyote', 'wolf', 'rabbit', 'bunny', 'horse', 'bear', 'tiger', 'cow', 'fly'],
+        'state': ['california', 'texas', 'florida', 'alabama', 'missouri', 'louisiana', 'washington', 'oregon', 'maine', 'mississippi', 'georgia', 'alaska', 'arizona', 'arkansas', 'colorado', 'hawaii', 'idaho', 'indiana', 'nevada', 'oklahoma']
     }
 
     # Check if category is provided, then choose a random word from that category
@@ -198,7 +200,8 @@ def print_scoreboard():
         else:
             # Split the scores into lines and sort them based on the score in descending order
             scores_lines = scores_content.strip().split('\n')
-            sorted_scores = sorted(scores_lines, key=lambda x: int(x.split(': ')[1]), reverse=True)
+
+            sorted_scores = sorted(scores_lines, key=lambda x: int(x.split(':')[1]), reverse=True)
 
             print("Scoreboard:")
             # Display each line of the sorted scoreboard
@@ -206,9 +209,7 @@ def print_scoreboard():
                 print(score_line)
 
     except FileNotFoundError:
-        print(f"Error: {file_path} not found. The scoreboard is empty.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+        print("Scoreboard file not found.")
 
 # Define the function to exit the game
 def exit_game():
