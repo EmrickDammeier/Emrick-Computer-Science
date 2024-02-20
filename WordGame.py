@@ -20,8 +20,23 @@
 # worked with Jack Yuan
 # declare scores as a global variable to store game scores
 import random
+from os import system, name
+from time import sleep
+
 # Declare scores as a global variable to store game scores
 scores = []
+
+def clear():
+    if name =='nt':
+        _ = system('cls')
+    else:
+        _ = system('clear')
+
+clear()
+''' Create a menu with:
+    instructions
+    each list of word selection '''
+
 
 # Define the main function to run the Hangman game
 def main():
@@ -215,6 +230,9 @@ def print_scoreboard():
 def exit_game():
     print("Exiting the game. Goodbye!")
     exit()
+
+sleep(2)
+clear()
 
 # Check if the script is run as the main program
 if __name__ == "__main__":
